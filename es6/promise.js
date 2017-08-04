@@ -2,9 +2,12 @@ const bringGift = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let giftOptions = ['bat', 'football', 'music player'];
-            let gift = giftOptions[Math.floor(Math.random() * 3)];
+            let gift = giftOptions[Math.floor(Math.random() * 6)];
             console.log(gift);
-            resolve(gift);
+            if(gift)
+                resolve(gift);
+            else
+                reject('Sorry I was busy');
         }, 2000);
     });
 }
@@ -23,7 +26,7 @@ const makePlan = (gift) => {
     }
 }
 
-bringGift().then(makePlan);
+bringGift().then(makePlan, (err) => console.log('No Gift :: ' + err));
 //makeAjaxCall().then((data) => {}, (data) => {})
 
 
