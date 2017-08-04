@@ -1,0 +1,6 @@
+table {width: 100%;}
+.row { background-color: lightgray;}
+.rating {font-size: 200%; width: 20%;}
+.details {vertical-align: top;}
+.tn {width: 20%;}
+.selected {background-color: lightyellow;}
