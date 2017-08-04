@@ -14,6 +14,7 @@ var MovieListComponent = (function () {
         this.movieSelected = new core_1.EventEmitter();
     }
     MovieListComponent.prototype.onSelect = function (movie) {
+        this.selectedMovie = movie;
         this.movieSelected.emit(movie);
     };
     return MovieListComponent;
@@ -29,7 +30,8 @@ __decorate([
 MovieListComponent = __decorate([
     core_1.Component({
         selector: 'movie-list',
-        template: "\n        <table>\n            <tr \n                class=\"row\" *ngFor=\"let movie of movies\" \n                (click)=\"onSelect(movie)\" \n                [class.selected]=\"movie==selectedMovie\"\n            >\n                <td class=\"rating\">{{movie.rating}}</td>\n                <td class=\"tn\"><img [src]=\"movie.thumbnail\" /></td>\n                <td class=\"details\">\n                    <b>{{movie.title}}</b><br/> {{movie.year}}\n                </td>\n            </tr>\n        </table>\n    "
+        template: "\n        <table>\n            <tr \n                class=\"row\" *ngFor=\"let movie of movies\" \n                (click)=\"onSelect(movie)\" \n                [class.selected]=\"movie==selectedMovie\"\n            >\n                <td class=\"rating\">{{movie.rating}}</td>\n                <td class=\"tn\"><img [src]=\"movie.thumbnail\" /></td>\n                <td class=\"details\">\n                    <b>{{movie.title}}</b><br/> {{movie.year}}\n                </td>\n            </tr>\n        </table>\n    ",
+        styles: ["\n        table {width: 100%;}\n        .row { background-color: lightgray;}\n        .rating {font-size: 200%; width: 20%;}\n        .details {vertical-align: top;}\n        .tn {width: 20%;}\n        .selected {background-color: lightyellow;}\n    "]
     })
 ], MovieListComponent);
 exports.MovieListComponent = MovieListComponent;

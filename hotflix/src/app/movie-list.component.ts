@@ -17,13 +17,24 @@ import {Movie} from './movie';
                 </td>
             </tr>
         </table>
-    `
+    `,
+    styles: [`
+        table {width: 100%;}
+        .row { background-color: lightgray;}
+        .rating {font-size: 200%; width: 20%;}
+        .details {vertical-align: top;}
+        .tn {width: 20%;}
+        .selected {background-color: lightyellow;}
+    `]
 })
 export class MovieListComponent {
     @Input() movies: Movie[];
     @Output() movieSelected = new EventEmitter();
+    selectedMovie: Movie;
+
 
     onSelect(movie: Movie) {
+        this.selectedMovie = movie;
         this.movieSelected.emit(movie);
     }
 }
