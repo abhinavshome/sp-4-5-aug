@@ -10,6 +10,8 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var detail_component_1 = require("./detail.component");
 var movie_list_component_1 = require("./movie-list.component");
+var add_movie_component_1 = require("./add-movie.component");
+var movie_service_1 = require("./movie.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,7 +23,11 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             detail_component_1.DetailComponent,
-            movie_list_component_1.MovieListComponent
+            movie_list_component_1.MovieListComponent,
+            add_movie_component_1.AddMovieComponent
+        ],
+        providers: [
+            movie_service_1.MovieService
         ],
         bootstrap: [app_component_1.AppComponent]
     })

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Movie } from './movie';
-import { MOVIES } from './mock-movies';
+import { MovieService } from './movie.service';
 
 @Component({
   selector: 'my-app',
@@ -10,9 +10,20 @@ import { MOVIES } from './mock-movies';
 export class AppComponent {
   title = 'HotFlix';
   selectedMovie: Movie;
-  movies: Movie[] = MOVIES;
+  movies: Movie[];
+
+  constructor(private movieService: MovieService) {
+    this.movies = this.movieService.getMovies();
+    this.selectedMovie = this.movieService.getSelectedMovie();
+  }
 
   onSelect(movie: Movie) {
-    this.selectedMovie = movie;
+    this.movieService.setSelectedMovie(movie);
+    this.selectedMovie = this.movieService.getSelectedMovie();
+  }
+
+  addMovie(movie: Movie) {
+    this.movieService.addMovie(movie);
+    this.movies = this.movieService.getMovies();
   }
 }
