@@ -52,9 +52,10 @@ export class AddMovieComponent {
         }
         this.movieService
             .addMovie(movie)
-            .then(() => this.router.navigate(['/movies']))
+            .then(() => {
+                this.router.navigate(['/movies']);
+            })
             ;
-        this.router.navigate(['/movies']);
     }
 
 }

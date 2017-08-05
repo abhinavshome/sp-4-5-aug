@@ -27,8 +27,9 @@ var AddMovieComponent = (function () {
         };
         this.movieService
             .addMovie(movie)
-            .then(function () { return _this.router.navigate(['/movies']); });
-        this.router.navigate(['/movies']);
+            .then(function () {
+            _this.router.navigate(['/movies']);
+        });
     };
     return AddMovieComponent;
 }());

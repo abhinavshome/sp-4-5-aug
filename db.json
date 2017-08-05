@@ -41,6 +41,62 @@
       "thumbnail": "https://images-na.ssl-images-amazon.com/images/M/MV5BODQwOTc5MDM2N15BMl5BanBnXkFtZTcwODQxNTEzNA@@._V1_UX45_CR0,0,45,67_AL_.jpg",
       "year": 1990,
       "id": 6
+    },
+    {
+      "title": "Schindlers List",
+      "rating": 9.9,
+      "thumbnail": "https://images-na.ssl-images-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX45_CR0,0,45,67_AL_.jpg",
+      "year": 1902,
+      "id": 7
+    },
+    {
+      "title": "Pulp Fiction",
+      "rating": 2.3,
+      "thumbnail": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_UY67_CR0,0,45,67_AL_.jpg",
+      "year": 1992,
+      "id": 8
+    },
+    {
+      "title": "wewe",
+      "rating": 3,
+      "thumbnail": "dsd",
+      "year": 3434,
+      "id": 9
+    },
+    {
+      "title": "wewe",
+      "rating": 22,
+      "thumbnail": "wewe",
+      "year": 33,
+      "id": 10
+    },
+    {
+      "title": "sdsd",
+      "rating": 2,
+      "thumbnail": "we",
+      "year": 2323,
+      "id": 11
+    },
+    {
+      "title": "sdsd",
+      "rating": 2,
+      "thumbnail": "we",
+      "year": 2323,
+      "id": 12
+    },
+    {
+      "title": 11,
+      "rating": 11,
+      "thumbnail": 11,
+      "year": 11,
+      "id": 13
+    },
+    {
+      "title": 12,
+      "rating": 12,
+      "thumbnail": 12,
+      "year": 12,
+      "id": 14
     }
   ]
 }
