@@ -9,3 +9,12 @@
 # db.json looks like
 
 {movies: [{id: 1, title: 'Drishyam'}]}
+
+# VS Code setting for hiding extra files
+
+"files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.js.map": true,
+        "**/*.js": {"when": "$(basename).ts"}
+    }
