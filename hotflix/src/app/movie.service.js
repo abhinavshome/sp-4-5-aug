@@ -14,6 +14,9 @@ var MovieService = (function () {
     MovieService.prototype.getMovies = function () {
         return this.movies;
     };
+    MovieService.prototype.getMovie = function (id) {
+        return this.movies.find(function (m) { return m.id == id; });
+    };
     MovieService.prototype.addMovie = function (movie) {
         this.movies.push(movie);
     };

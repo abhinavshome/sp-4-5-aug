@@ -4,8 +4,16 @@ import { MovieService } from './movie.service';
 
 @Component({
   selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `  
+  <h1>{{title}}</h1>
+  <a routerLink="/movies" routerLinkActive="current">Home</a> |
+  <a routerLink="/add-movie" routerLinkActive="current">Add Movie</a> 
+  <router-outlet></router-outlet>
+  <br/><br/>
+  `,
+  styles: [`
+    .current{color: red};
+    `]
 })
 export class AppComponent {
   title = 'HotFlix';

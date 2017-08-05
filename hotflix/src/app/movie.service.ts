@@ -11,6 +11,10 @@ export class MovieService {
         return this.movies;
     }
 
+    getMovie(id: number) : Movie {
+        return this.movies.find(m => m.id == id);
+    }
+
     addMovie(movie: Movie) {
         this.movies.push(movie);
     }

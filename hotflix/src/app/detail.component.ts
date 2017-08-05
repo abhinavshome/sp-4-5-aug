@@ -8,8 +8,8 @@ import {Movie} from './movie';
       <tr>
         <td class="tn"><img src="{{movie.thumbnail}}"/></td>
         <td class="details">
-          <b>{{movie.title}}</b><br/>
-          <button>Play Now</button>
+          <b>{{movie.title | uppercase}}</b><br/>
+          <button [routerLink]="['/play',movie.id]">Play Now</button>
         </td>
       </tr>
     </table>

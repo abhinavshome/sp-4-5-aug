@@ -30,8 +30,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.css']
+        template: "  \n  <h1>{{title}}</h1>\n  <a routerLink=\"/movies\" routerLinkActive=\"current\">Home</a> |\n  <a routerLink=\"/add-movie\" routerLinkActive=\"current\">Add Movie</a> \n  <router-outlet></router-outlet>\n  <br/><br/>\n  ",
+        styles: ["\n    .current{color: red};\n    "]
     }),
     __metadata("design:paramtypes", [movie_service_1.MovieService])
 ], AppComponent);

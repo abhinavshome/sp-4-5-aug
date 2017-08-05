@@ -22,7 +22,7 @@ __decorate([
 DetailComponent = __decorate([
     core_1.Component({
         selector: 'detail',
-        template: "\n    <table *ngIf=\"movie\">\n      <tr>\n        <td class=\"tn\"><img src=\"{{movie.thumbnail}}\"/></td>\n        <td class=\"details\">\n          <b>{{movie.title}}</b><br/>\n          <button>Play Now</button>\n        </td>\n      </tr>\n    </table>\n    "
+        template: "\n    <table *ngIf=\"movie\">\n      <tr>\n        <td class=\"tn\"><img src=\"{{movie.thumbnail}}\"/></td>\n        <td class=\"details\">\n          <b>{{movie.title | uppercase}}</b><br/>\n          <button [routerLink]=\"['/play',movie.id]\">Play Now</button>\n        </td>\n      </tr>\n    </table>\n    "
     })
 ], DetailComponent);
 exports.DetailComponent = DetailComponent;

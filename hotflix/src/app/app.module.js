@@ -7,10 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var detail_component_1 = require("./detail.component");
 var movie_list_component_1 = require("./movie-list.component");
 var add_movie_component_1 = require("./add-movie.component");
+var home_page_component_1 = require("./home-page.component");
+var play_component_1 = require("./play.component");
 var movie_service_1 = require("./movie.service");
 var AppModule = (function () {
     function AppModule() {
@@ -19,12 +22,35 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
+        imports: [
+            platform_browser_1.BrowserModule,
+            router_1.RouterModule.forRoot([
+                {
+                    path: 'movies',
+                    component: home_page_component_1.HomePageComponent
+                },
+                {
+                    path: 'add-movie',
+                    component: add_movie_component_1.AddMovieComponent
+                },
+                {
+                    path: 'play/:movieId',
+                    component: play_component_1.PlayComponent
+                },
+                {
+                    path: '',
+                    redirectTo: '/movies',
+                    pathMatch: 'full'
+                }
+            ])
+        ],
         declarations: [
             app_component_1.AppComponent,
             detail_component_1.DetailComponent,
             movie_list_component_1.MovieListComponent,
-            add_movie_component_1.AddMovieComponent
+            add_movie_component_1.AddMovieComponent,
+            home_page_component_1.HomePageComponent,
+            play_component_1.PlayComponent
         ],
         providers: [
             movie_service_1.MovieService
