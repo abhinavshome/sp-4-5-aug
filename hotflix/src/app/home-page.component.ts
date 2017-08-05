@@ -15,7 +15,10 @@ export class HomePageComponent {
   movies: Movie[];
 
   constructor(private movieService: MovieService) {
-    this.movies = this.movieService.getMovies();
+    this.movieService
+      .getMovies()
+      .then((movies) => this.movies = movies);
+
     this.selectedMovie = this.movieService.getSelectedMovie();
   }
 

@@ -50,7 +50,10 @@ export class AddMovieComponent {
             thumbnail: thumbnail.value,
             year: +year.value
         }
-        this.movieService.addMovie(movie);
+        this.movieService
+            .addMovie(movie)
+            .then(() => this.router.navigate(['/movies']))
+            ;
         this.router.navigate(['/movies']);
     }
 

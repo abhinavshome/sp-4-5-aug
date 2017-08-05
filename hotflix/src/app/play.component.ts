@@ -6,8 +6,10 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
     selector: 'play',
     template: `
-        <h2>Playing {{movie.title}}</h2>
-        <img [src]="movie.thumbnail"/>
+        <div *ngIf="movie">
+            <h2>Playing {{movie.title}}</h2>
+            <img [src]="movie.thumbnail"/>
+        </div>
     `,
     styles: [`img {width: 100%;}`]
 })
@@ -18,7 +20,6 @@ export class PlayComponent implements OnInit{
         private movieService: MovieService,
         private route: ActivatedRoute
     ) {
-
     }
 
     ngOnInit() {
@@ -26,7 +27,9 @@ export class PlayComponent implements OnInit{
             .paramMap
             .subscribe(p => {
                 let movieId = +p.get('movieId');
-                this.movie = this.movieService.getMovie(movieId);
+                this.movieService
+                    .getMovie(movieId)
+                    .then(movie => this.movie = movie);
             });
     }
 }

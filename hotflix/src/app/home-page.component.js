@@ -12,9 +12,12 @@ var core_1 = require("@angular/core");
 var movie_service_1 = require("./movie.service");
 var HomePageComponent = (function () {
     function HomePageComponent(movieService) {
+        var _this = this;
         this.movieService = movieService;
         this.title = 'HotFlix';
-        this.movies = this.movieService.getMovies();
+        this.movieService
+            .getMovies()
+            .then(function (movies) { return _this.movies = movies; });
         this.selectedMovie = this.movieService.getSelectedMovie();
     }
     HomePageComponent.prototype.onSelect = function (movie) {

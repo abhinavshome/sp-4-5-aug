@@ -17,6 +17,7 @@ var AddMovieComponent = (function () {
         this.router = router;
     }
     AddMovieComponent.prototype.addMovie = function (title, rating, thumbnail, year) {
+        var _this = this;
         console.log(title.value, rating.value, thumbnail.value, year.value);
         var movie = {
             title: title.value,
@@ -24,7 +25,9 @@ var AddMovieComponent = (function () {
             thumbnail: thumbnail.value,
             year: +year.value
         };
-        this.movieService.addMovie(movie);
+        this.movieService
+            .addMovie(movie)
+            .then(function () { return _this.router.navigate(['/movies']); });
         this.router.navigate(['/movies']);
     };
     return AddMovieComponent;

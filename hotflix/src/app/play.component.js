@@ -22,7 +22,9 @@ var PlayComponent = (function () {
             .paramMap
             .subscribe(function (p) {
             var movieId = +p.get('movieId');
-            _this.movie = _this.movieService.getMovie(movieId);
+            _this.movieService
+                .getMovie(movieId)
+                .then(function (movie) { return _this.movie = movie; });
         });
     };
     return PlayComponent;
@@ -30,7 +32,7 @@ var PlayComponent = (function () {
 PlayComponent = __decorate([
     core_1.Component({
         selector: 'play',
-        template: "\n        <h2>Playing {{movie.title}}</h2>\n        <img [src]=\"movie.thumbnail\"/>\n    ",
+        template: "\n        <div *ngIf=\"movie\">\n            <h2>Playing {{movie.title}}</h2>\n            <img [src]=\"movie.thumbnail\"/>\n        </div>\n    ",
         styles: ["img {width: 100%;}"]
     }),
     __metadata("design:paramtypes", [movie_service_1.MovieService,
