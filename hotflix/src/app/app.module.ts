@@ -9,6 +9,7 @@ import { MovieListComponent } from './movie-list.component';
 import { AddMovieComponent } from './add-movie.component';
 import { HomePageComponent } from './home-page.component';
 import { PlayComponent } from './play.component';
+import { MyHighlighterDirective } from './my-highlighter.directive';
 
 import { MovieService } from './movie.service';
 
@@ -42,7 +43,8 @@ import { MovieService } from './movie.service';
     MovieListComponent,
     AddMovieComponent,
     HomePageComponent,
-    PlayComponent
+    PlayComponent,
+    MyHighlighterDirective
   ],
   providers: [
     MovieService

@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var movie_1 = require("./movie");
-var DetailComponent = (function () {
-    function DetailComponent() {
+var MyHighlighterDirective = (function () {
+    function MyHighlighterDirective(el) {
+        el.nativeElement.style.color = (this.color || 'yellow');
     }
-    return DetailComponent;
+    return MyHighlighterDirective;
 }());
 __decorate([
     core_1.Input(),
-    __metadata("design:type", movie_1.Movie)
-], DetailComponent.prototype, "movie", void 0);
-DetailComponent = __decorate([
-    core_1.Component({
-        selector: 'detail',
-        template: "\n    <table *ngIf=\"movie\">\n      <tr>\n        <td class=\"tn\"><img src=\"{{movie.thumbnail}}\"/></td>\n        <td class=\"details\">\n          <b>{{movie.title | uppercase}}</b><br/>\n          <button [routerLink]=\"['/play-movie', movie.id]\">Play Now</button>\n        </td>\n      </tr>\n    </table>\n    "
-    })
-], DetailComponent);
-exports.DetailComponent = DetailComponent;
-//# sourceMappingURL=detail.component.js.map
+    __metadata("design:type", String)
+], MyHighlighterDirective.prototype, "color", void 0);
+MyHighlighterDirective = __decorate([
+    core_1.Directive({
+        selector: '[my-highlighter]'
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], MyHighlighterDirective);
+exports.MyHighlighterDirective = MyHighlighterDirective;
+//# sourceMappingURL=my-highlighter.directive.js.map

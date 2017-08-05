@@ -15,6 +15,7 @@ var movie_list_component_1 = require("./movie-list.component");
 var add_movie_component_1 = require("./add-movie.component");
 var home_page_component_1 = require("./home-page.component");
 var play_component_1 = require("./play.component");
+var my_highlighter_directive_1 = require("./my-highlighter.directive");
 var movie_service_1 = require("./movie.service");
 var AppModule = (function () {
     function AppModule() {
@@ -52,7 +53,8 @@ AppModule = __decorate([
             movie_list_component_1.MovieListComponent,
             add_movie_component_1.AddMovieComponent,
             home_page_component_1.HomePageComponent,
-            play_component_1.PlayComponent
+            play_component_1.PlayComponent,
+            my_highlighter_directive_1.MyHighlighterDirective
         ],
         providers: [
             movie_service_1.MovieService
